@@ -9,10 +9,10 @@ class Handler implements URLHandler {
         if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
             if (parameters[0].equals("s")) {
-                input += "\n";
                 for (int i = 1; i <parameters.length; i++) {
                     input += parameters[i];
                 }
+                input += "\n";
                 return String.format(input);
             }
         }
